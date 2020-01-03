@@ -3,6 +3,7 @@
 {{#post}}
 <article class="post-content {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
+<!--
     <header class="post-content-header">
         <h1 class="post-content-title">{{title}}</h1>
     </header>
@@ -10,11 +11,31 @@
     {{#if custom_excerpt}}
         <p class="post-content-excerpt">{{custom_excerpt}}</p>
     {{/if}}
-
+-->
     {{#if feature_image}}
-    <div class="post-content-image">
+    <figure class="post-content-image">
         <img class="kg-image" src="{{feature_image}}" alt="{{title}}" />
+	<div class="post-content-meta">
+	<figcaption class="post-content-figcaption">
+	{{title}}, &nbsp; <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D/MM/YYYY"}}</time>
+        </figcaption>
+
+        <div class="post-content-nav">
+
+	{{#next_post}}
+        <a class="post-content-nav-arrow" href="{{url}}">&lt;</a>
+        {{/next_post}}
+
+	&nbsp;
+
+        {{#prev_post}}
+	<a class="post-content-nav-arrow" href="{{url}}">&gt;</a>
+        {{/prev_post}}
+	</div>
+
+
     </div>
+    </figure>
     {{/if}}
 
     <div class="post-content-body">
@@ -47,6 +68,7 @@
     --}}
 
 </article>
+
 {{/post}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}

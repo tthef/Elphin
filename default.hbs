@@ -13,7 +13,8 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
@@ -31,26 +32,26 @@
                         </div>
                     </div>
                 </a>
-                <nav id="swup" class="site-head-left">
-                    {{navigation}}
-                </nav>
-                <div class="site-head-center">
+                <div class="site-head-left">
                     {{#if @site.logo}}
                     <a class="site-head-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
                     {{else}}
                     <a class="site-head-logo" href="{{@site.url}}">{{@site.title}}</a>
                     {{/if}}
                 </div>
+                <nav id="swup" class="site-head-center">
+                    {{navigation}}
+                </nav>
                 <div class="site-head-right">
-                    <div class="social-links">
-                        {{#if @site.facebook}}
-                        <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">Facebook</a>
-                        {{/if}}
-                        {{#if @site.twitter}}
-                        <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">Twitter</a>
-                        {{/if}}
-                        <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">RSS</a>
-                    </div>
+		  <div class="social-links">
+		    {{#if @site.facebook}}
+		    <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">Facebook</a>
+		    {{/if}}
+		    {{#if @site.twitter}}
+		    <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">Twitter</a>
+		    {{/if}}
+		    <a href="{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">RSS</a>
+		  </div>
                 </div>
             </div>
         </header>
@@ -66,7 +67,9 @@
 
         {{!-- The footer at the very bottom of the screen --}}
         <footer class="site-foot">
-            &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> &mdash; Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+	  <span>
+            &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a>
+	  </span>
         </footer>
 
     </div>
@@ -94,6 +97,10 @@
         crossorigin="anonymous">
     </script>
 
+    <script src="{{asset "/built/masonry.pkgd.min.js"}}" data-swup-ignore-script></script>
+    <script src="{{asset "/built/imagesloaded.pkgd.min.js"}}" data-swup-ignore-script></script>
+    <script src="{{asset "/built/grid.js"}}"></script>
+
     <div id="swup">
         {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
         {{{block "scripts"}}}
@@ -120,6 +127,5 @@
             $('body').removeClass('site-head-open');
         });
     </script>
-
 </body>
 </html>

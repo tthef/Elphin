@@ -1,41 +1,54 @@
-# London
+# Elphin
 
-A custom, image-centric theme for [Ghost](http://github.com/tryghost/ghost/). Made for publishers and portfolios with plenty of graphics to show off to the world. Completely free and fully responsive, released under the MIT license.
+A custom, photo-centric, theme for [Ghost](http://github.com/tryghost/ghost/). Released free of charge under MIT license.
 
-**Demo: https://london.ghost.io**
+Based on the London theme by the Ghost folk, but with heavy emphais on the images rather than image rich text. (WIP)
 
-&nbsp;
+I had a bunch of specific requirements to start with:
 
-![london](https://user-images.githubusercontent.com/120485/50552024-84837400-0c82-11e9-8f1d-cf25962c7e62.jpg)
+* Landing page without feed with a background image, easily editable through
+  the site editor,
 
+* About page, with same background image as the landing page,
 
-&nbsp;
+* All other pages just solid themeable background,
 
-# First time using a Ghost theme?
+* Gallery page(s) with a masonry layout that preserves image ratio.
 
-Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
+Ghost doesn’t directly facilitate all of this but I wanted to make it work without hacking Ghost itself, so a bit of lateral thinking was needed.
 
-We've documented our default theme pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, we also have full [theme API documentation](https://themes.ghost.org) which explains every possible Handlebars helper and template.
+The `default.hbs` template works around the fact that Ghost index page cannot
+be one of the static pages. It uses the tile, contents, and feature image from a post tagged ‘#main`; this post must be among the 10 oldest posts on the site.
+
+The `page-about.hbs` template is used to render the About page (created normally
+through the site Editor). Unlike the regular static pages, this page has the
+same background as the landing page.
+
+The image galleries are implemented as a tag archives; the main Gallery shows
+images tagged with the ‘Gallery’ tag, using a special `tag-gallery.hbs` template
+which maximises the screen real estate for the images (no title or descriptive
+blob). Other galleries can simply be created using other tags (and will use the
+`tag.hbs` template). In both cases masonry layout is used.
+
+The `page-browse.hbs` is a custom template for a browse page; it shows the
+complete feed, plus a small menu with all public tags (aka galleries).
 
 **The main files are:**
 
-- `default.hbs` - The main template file
-- `index.hbs` - Used for the home page
-- `post.hbs` - Used for individual posts
-- `page.hbs` - Used for individual pages
-- `tag.hbs` - Used for tag archives
-- `author.hbs` - Used for author archives
-
-One neat trick is that you can also create custom one-off templates just by adding the slug of a page to a template file. For example:
-
-- `page-about.hbs` - Custom template for the `/about/` page
-- `tag-news.hbs` - Custom template for `/tag/news/` archive
-- `author-ali.hbs` - Custom template for `/author/ali/` archive
-
+- `default.hbs`     - The main template file
+- `home.hbs`        - Used for the home page
+- `post.hbs`        - Used for individual posts
+- `page.hbs`        - Used for individual pages
+- `post-card.hbs`   - A partial used to render the gallery ‘thumbs’
+- `page-about.hbs`  - Used for the About Page
+- `page-browse.hbs` - A main post feed page.
+- `tag.hbs`         - Used for tag archives
+- `tag-gallery.hbs` - Use for the Gallery
+- `author.hbs`      - Used for author archives
 
 # Development
 
-London styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
+As with the original London theme styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
 
 ```bash
 $ yarn install
@@ -59,4 +72,6 @@ $ yarn zip
 
 # Copyright & License
 
-Copyright (c) 2013-2019 Ghost Foundation - Released under the [MIT license](LICENSE).
+Copyright (c) 2013-2019 Ghost Foundation
+Copyright (c) 2020 Tomas Frydrych
+Released under the [MIT license](LICENSE).

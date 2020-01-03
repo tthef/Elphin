@@ -7,9 +7,10 @@
 
     /* Colours */
     --color-primary: #3eb0ef;
-    --color-base: #131313;
+    --color-base: #f8f8f8;
     --color-border: #ddd;
-    --color-bg: #f8f8f8;
+    --color-bg: #1f1f1f;
+    --color-image-frame: #f8f8f8;
 
     /* Fonts */
     --font-sans-serif: 'Muli', sans-serif;
@@ -32,4 +33,6 @@
     --margin: 2rem;
     --radius: 0.5rem;
 
+    /* Grid stuff */
+    --image-border: 5px;
 }

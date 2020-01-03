@@ -1,0 +1,2 @@
+function grid(){$(document).ready(function(){var i=document.querySelector(".grid");i&&imagesLoaded(i,function(e){var r=new Masonry(i,{itemSelector:".grid-item",columnWidth:".grid-sizer",gutter:0,percentPosition:!0,horizontalOrder:!0});$(window).resize(function(){console.warn("resize"),r.layout()})})})}grid();
+//# sourceMappingURL=grid.js.map

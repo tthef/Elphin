@@ -1,0 +1,30 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- Get the oldest n posts, and look for the one tagged #main, then construct
+      a style for the body tag that uses this posts background image. The style
+      is set to streach the image to fit.
+
+      Use the post title and content for this page. (Yes, it would be simpler
+      if home could be a static page ...)
+--}}
+{{#get "posts" limit="10" include="tags" order="published_at asc" as |articles pages|}}
+{{log 'here'}}
+{{#foreach articles}}
+{{#has tag='#main'}}
+
+<style>
+body {background-image: url({{img_url feature_image}}); background-size: cover; }
+</style>
+
+<div class="home-main">
+     <div class="home-content">
+     <h2>{{title}}</h2>
+     {{content}}
+     </div>
+</div>
+
+{{/has}}
+{{/foreach}}
+{{/get}}

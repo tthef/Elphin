@@ -1,0 +1,55 @@
+{{!< default}}
+
+{{#post}}
+{{/post}}
+
+<div class="page-gallery-menu">
+<span class="page-gallery-menu-item">Galleries:</span>
+<ul class="page-gallery-menu" role="menu">
+{{!-- check if we have at least one gallery post with this tag --}}
+{{#get "tags" limit="all" filter="slug:-gallery"}}
+  {{#foreach tags as |mytag|}}
+     {{#mytag}}
+       {{#get "posts" limit="1" include="tags" filter="tags:{{slug}}"}}
+         {{#foreach posts as |mypost|}}
+           {{#mypost}}
+             {{#has tag="gallery"}}
+ <li class="page-gallery-menu-item" role="menuitem">
+ <a href='{{mytag.url}}'>{{mytag.name}}{{^if @last}}, {{/if}}</a>
+ </li>
+             {{/has}}
+           {{/mypost}}
+         {{/foreach}}
+       {{/get}}
+      {{/mytag}}
+    {{/foreach}}
+{{/get}}
+</ul>
+</div>
+
+<div class="post-feed grid">
+<div class="grid-item grid-sizer"></div>
+{{#get "posts" include="tags" limit="all" filter="tags:gallery"}}
+{{#foreach posts}}
+{{^has tag="#main"}}
+    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+    {{> "post-card"}}
+{{/has}}
+{{/foreach}}
+{{/get}}
+</div>
+
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+        var container = image.closest('.kg-gallery-image');
+        var width = image.attributes.width.value;
+        var height = image.attributes.height.value;
+        var ratio = width / height;
+        container.style.flex = ratio + ' 1 0%';
+    })
+</script>
+{{/contentFor}}
