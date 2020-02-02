@@ -711,10 +711,16 @@ body {
     margin: 0 auto;
 }
 
-.post-content-nav {
+.post-content-nav-right {
     flex: 1 1 auto;
     display: flex;
     justify-content: flex-end;
+}
+
+.post-content-nav-left {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .post-content-nav a:hover {
@@ -722,7 +728,7 @@ body {
 }
 
 .post-content-nav-arrow {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: var(--font-heavy);
     color: var(--color-base);
 }

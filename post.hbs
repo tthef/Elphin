@@ -16,18 +16,22 @@
     <figure class="post-content-image">
         <img class="kg-image" src="{{feature_image}}" alt="{{title}}" />
 	<div class="post-content-meta">
-	<figcaption class="post-content-figcaption">
-	{{title}}, &nbsp; <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D/MM/YYYY"}}</time>
-        </figcaption>
-
-        <div class="post-content-nav">
-
+        <div class="post-content-nav-left">
 	{{#next_post}}
         <a class="post-content-nav-arrow" href="{{url}}">&lt;</a>
         {{/next_post}}
+	</div>
 
-	&nbsp;
+	<figcaption class="post-content-figcaption">
+	{{title}}
+	{{!--
+	, &nbsp;
+	    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D/MM/YYYY"}}
+	    </time>
+	--}}
+        </figcaption>
 
+        <div class="post-content-nav-right">
         {{#prev_post}}
 	<a class="post-content-nav-arrow" href="{{url}}">&gt;</a>
         {{/prev_post}}
