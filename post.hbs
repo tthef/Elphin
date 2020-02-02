@@ -16,12 +16,6 @@
     <figure class="post-content-image">
         <img class="kg-image" src="{{feature_image}}" alt="{{title}}" />
 	<div class="post-content-meta">
-        <div class="post-content-nav-left">
-	{{#next_post}}
-        <a class="post-content-nav-arrow" href="{{url}}">&lt;</a>
-        {{/next_post}}
-	</div>
-
 	<figcaption class="post-content-figcaption">
 	{{title}}
 	{{!--
@@ -31,7 +25,11 @@
 	--}}
         </figcaption>
 
-        <div class="post-content-nav-right">
+        <div class="post-content-nav-rigth">
+	{{#next_post}}
+        <a class="post-content-nav-arrow" href="{{url}}">&lt;</a>
+        {{/next_post}}
+	&nbsp;
         {{#prev_post}}
 	<a class="post-content-nav-arrow" href="{{url}}">&gt;</a>
         {{/prev_post}}

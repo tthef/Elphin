@@ -764,7 +764,6 @@ body {
     display: flex;
     font-size: 1.5rem;
     margin-top: 0.2vw;
-    justify-content: center;
 }
 
 .post-content-meta {
