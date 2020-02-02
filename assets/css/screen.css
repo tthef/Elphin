@@ -802,7 +802,10 @@ body {
 }
 
 .page-about .post-content-body p {
-    font-size: 1.5rem;
+    line-height: 1.2em;
+    font-size: 1.6rem;
+    font-weight: 200;
+    text-align: justify;
 }
 
 .page-gallery-menu {
