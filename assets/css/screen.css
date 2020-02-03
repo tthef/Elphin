@@ -1029,9 +1029,14 @@ body {
     text-align: center;
 }
 
-.comp-badges {
+.comp-badget {
+    display: none;
+}
+
+.page-about .comp-badges {
     display: flex;
     position: fixed;
     bottom: 0;
     right: 1vw;
 }
+

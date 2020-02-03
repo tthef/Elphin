@@ -36,6 +36,12 @@ complete feed, plus a small menu with all public tags (aka galleries).
 In order for things to work, you need to setup custom routing by uploading the
 routes.yml file to the ghost intallation.
 
+I had to remove the swup script that London uses; it’s a nice idea, but it
+breaks Ghost theming rather badly (in ghost each page type gets assigned
+specific classes, e.g., .page-about for the about page, .tag for tags, etc.;
+when swup is used, when the pages changed, these styles don’t, which makes it
+impossible to create functional styling).
+
 **The main files are:**
 
 - `default.hbs`     - The main template file
