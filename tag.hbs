@@ -3,6 +3,7 @@
 into the {body} of the default.hbs template --}}
 
 {{#tag}}
+
 <header class="page-head">
     <h1 class="page-head-title">{{name}}</h1>
     <p class="page-head-description">
@@ -13,6 +14,31 @@ into the {body} of the default.hbs template --}}
         {{/if}}
     </p>
 </header>
+
+<div class="page-gallery-menu">
+<span class="page-gallery-menu-item">Other galleries:</span>
+<ul class="page-gallery-menu" role="menu">
+{{!-- check if we have at least one gallery post with this tag --}}
+{{#get "tags" limit="all" filter="slug:-gallery+slug:-{{slug}}"}}
+  {{#foreach tags as |mytag|}}
+     {{#mytag}}
+       {{#get "posts" limit="1" include="tags" filter="tags:{{slug}}"}}
+         {{#foreach posts as |mypost|}}
+           {{#mypost}}
+             {{#has tag="gallery"}}
+ <li class="page-gallery-menu-item" role="menuitem">
+ <a href='{{mytag.url}}'>{{mytag.name}}{{^if @last}}, {{/if}}</a>
+ </li>
+             {{/has}}
+           {{/mypost}}
+         {{/foreach}}
+       {{/get}}
+      {{/mytag}}
+    {{/foreach}}
+{{/get}}
+</ul>
+</div>
+
 {{/tag}}
 
 <div class="post-feed grid are-images-unloaded">
