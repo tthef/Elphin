@@ -412,15 +412,19 @@ body {
         margin-top: 3vw;
 	opacity: 0;
     }
+
+    .site-head-center a,
+    .site-head-right a,
+    .social-links a {
+	font-size: 2rem;
+	font-weight: 600;
+    }
+    
     .social-links {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .social-links a {
-	font-size: 1.5rem;
-	font-weight: 600;
-    }
     
     .site-head-open {
         background: var(--color-bg);
