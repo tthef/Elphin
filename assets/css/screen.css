@@ -612,7 +612,6 @@ body {
     color: #fff;
     background: rgba(0,0,0,0.1);
     opacity: 1;
-//    transition: opacity 0.5s cubic-bezier(.33,0,.2,1);
     max-width: 100%;
     max-height: 100%;
 }
@@ -809,8 +808,9 @@ body {
 }
 
 .post-content-body {
-    font-size: 1.9rem;
-    line-height: 1.65em;
+    font-size: 1.75rem;
+    line-height: 1.2em;
+    font-weight: 200;
 }
 
 .page-about .post-content-body {
@@ -818,9 +818,6 @@ body {
 }
 
 .page-about .post-content-body p {
-    line-height: 1.2em;
-    font-size: 1.6rem;
-    font-weight: 200;
     text-align: justify;
 }
 
