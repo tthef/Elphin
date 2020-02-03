@@ -1,0 +1,11 @@
+routes:
+  /: home
+
+collections:
+  /gallery/:
+    permalink: /{slug}/
+    template: gallery
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

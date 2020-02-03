@@ -27,17 +27,34 @@
 </ul>
 </div>
 
-<div class="post-feed grid">
+{{#get "posts" include="tags" limit="12" page="1" filter="tags:gallery"}}
+<div class="post-feed grid are-images-unloaded">
 <div class="grid-item grid-sizer"></div>
-{{#get "posts" include="tags" limit="all" filter="tags:gallery"}}
 {{#foreach posts}}
-{{^has tag="#main"}}
-    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-    {{> "post-card"}}
-{{/has}}
+  {{^has tag="#main"}}
+    {{#has tag="Gallery"}}
+      {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+      {{> "post-card"}}
+    {{/has}}
+  {{/has}}
 {{/foreach}}
-{{/get}}
 </div>
+
+<div class="page-load-status">
+      <div class="loader-ellips infinite-scroll-request">
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+      </div>
+      {{!--
+      <p class="scroller-status__message infinite-scroll-last">End of content</p>
+      <p class="scroller-status__message infinite-scroll-error">No more pages to load</p>
+      --}}
+</div>
+
+{{pagination}}
+{{/get}}
 
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}

@@ -25,13 +25,16 @@ through the site Editor). Unlike the regular static pages, this page has the
 same background as the landing page.
 
 The image galleries are implemented as a tag archives; the main Gallery shows
-images tagged with the ‘Gallery’ tag, using a special `tag-gallery.hbs` template
-which maximises the screen real estate for the images (no title or descriptive
-blob). Other galleries can simply be created using other tags (and will use the
-`tag.hbs` template). In both cases masonry layout is used.
+images tagged with the ‘Gallery’ tag, the `gallery.hbs` template which maximises
+the screen real estate for the images (no title or descriptive blob). Other
+galleries can simply be created using other tags (and will use the `tag.hbs`
+template). In both cases masonry layout is used.
 
 The `page-browse.hbs` is a custom template for a browse page; it shows the
 complete feed, plus a small menu with all public tags (aka galleries).
+
+In order for things to work, you need to setup custom routing by uploading the
+routes.yml file to the ghost intallation.
 
 **The main files are:**
 
@@ -43,9 +46,9 @@ complete feed, plus a small menu with all public tags (aka galleries).
 - `page-about.hbs`  - Used for the About Page
 - `page-browse.hbs` - A main post feed page.
 - `tag.hbs`         - Used for tag archives
-- `tag-gallery.hbs` - Use for the Gallery
+- `gallery.hbs`     - Use for the Gallery
 - `author.hbs`      - Used for author archives
-
+- `routes.yml`      - custom routing
 # Development
 
 As with the original London theme styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:

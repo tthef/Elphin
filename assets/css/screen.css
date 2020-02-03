@@ -19,7 +19,7 @@ production stylesheet in assets/built/screen.css using gulp dev
 @import "components/actions.css";
 @import "components/hamburger.css";
 @import "components/animations.css";
-
+@import "components/infinitescroll.css";
 
 /* Main - Theme styles
 /* ---------------------------------------------------------- */
@@ -448,6 +448,9 @@ body {
 
 }
 
+.pagination {
+    display: none;
+}
 
 /* Post Feed
 /* ---------------------------------------------------------- */
@@ -458,6 +461,10 @@ body {
     margin-top: 0.2vh;
     padding-bottom: 5vh;
     background: var(--color-bg);
+}
+
+.post-feed .grid .are-images-unloaded {
+  opacity: 0;
 }
 
 /*
@@ -472,6 +479,9 @@ body {
     max-width: 100%;
 }
 
+.post-feed .grid .are-images-unloaded .post-card {
+  opacity: 0;
+}
 .post-feed .grid-sizer {
     height: 0;
     margin: 0;

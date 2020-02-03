@@ -14,7 +14,7 @@
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
-    
+
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
@@ -89,17 +89,17 @@
     </div>
     {{/if}}
 
-    <script src="{{asset "built/swup.js"}}" data-swup-ignore-script></script>
-    <script src="{{asset "built/infinitescroll.js"}}" data-swup-ignore-script></script>
     <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
+    <script src="{{asset "built/swup.js"}}" data-swup-ignore-script></script>
+    <script src="{{asset "built/infinite-scroll.pkgd.min.js"}}" data-swup-ignore-script></script>
 
     <script src="{{asset "/built/masonry.pkgd.min.js"}}" data-swup-ignore-script></script>
     <script src="{{asset "/built/imagesloaded.pkgd.min.js"}}" data-swup-ignore-script></script>
-    <script src="{{asset "/built/grid.js"}}"></script>
+    <script src="{{asset "/built/grid.js" data-swup-ignore-script}}"></script>
 
     <div id="swup">
         {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
@@ -123,7 +123,7 @@
             plugins: [new SwupHeadPlugin(), new SwupScriptsPlugin()],
         });
         document.addEventListener('swup:contentReplaced', event => {
-            initInfiniteScroll(window, document);
+            //initInfiniteScroll(window, document);
             $('body').removeClass('site-head-open');
         });
     </script>

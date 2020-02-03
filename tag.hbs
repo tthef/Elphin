@@ -15,7 +15,7 @@ into the {body} of the default.hbs template --}}
 </header>
 {{/tag}}
 
-<div class="post-feed grid">
+<div class="post-feed grid are-images-unloaded">
 <div class="grid-item grid-sizer"></div>
 {{#foreach posts}}
 
@@ -24,3 +24,18 @@ into the {body} of the default.hbs template --}}
 
 {{/foreach}}
 </div>
+
+<div class="page-load-status">
+      <div class="loader-ellips infinite-scroll-request">
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+      </div>
+      {{!--
+      <p class="scroller-status__message infinite-scroll-last">End of content</p>
+      <p class="scroller-status__message infinite-scroll-error">No more pages to load</p>
+      --}}
+</div>
+
+{{pagination}}
