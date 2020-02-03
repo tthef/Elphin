@@ -142,6 +142,7 @@ body {
 
     color: color(var(--color-border) l(-20%));
     font-size: 1.4rem;
+    width: 100%;
 }
 
 .page-browse .site-foot, .tag-template .site-foot {
@@ -1025,4 +1026,11 @@ body {
 .page-template .post-content-body h2,
 .page-template .post-content-body h3 {
     text-align: center;
+}
+
+.comp-badges {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 1vw;
 }
