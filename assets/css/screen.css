@@ -131,8 +131,8 @@ body {
 
 .site-foot {
     display: block;
-    position: fixed;
-    bottom: 1vh;
+    position: relative;
+    bottom: 0;
     text-align: center;
     transform: translateY(-4vw);
 
@@ -147,8 +147,11 @@ body {
 
 .page-browse .site-foot, .tag-template .site-foot {
     display: block;
-    position: relative;
-    bottom: 0;
+}
+
+.home-template .site-foot, .page-about .site-foot {
+    position: fixed;
+    bottom: 1vh;
 }
 
 .site-foot a {
@@ -166,6 +169,14 @@ body {
     padding-top: 20vh;
     diplay: flex;
     justify-content: center;
+}
+
+@media (max-width: 500px) {
+    .home-content {
+	padding-top: 10vh;
+	diplay: flex;
+	justify-content: center;
+    }
 }
 
 .home-content p {
@@ -815,6 +826,14 @@ body {
     font-weight: 200;
 }
 
+@media (max-width: 500px) {
+    .post-content-body {
+	font-size: 1.2rem;
+	line-height: 1.1em;
+	max-width: 95vw;
+    }
+}
+
 .page-about .post-content-body {
     padding-top: 5vw;
 }
@@ -1039,4 +1058,3 @@ body {
     bottom: 0;
     right: 1vw;
 }
-
