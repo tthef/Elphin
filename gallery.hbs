@@ -27,7 +27,6 @@
 </ul>
 </div>
 
-{{#get "posts" include="tags" limit="12" page="1" filter="tags:gallery"}}
 <div class="post-feed grid are-images-unloaded">
 <div class="grid-item grid-sizer"></div>
 {{#foreach posts}}
@@ -54,8 +53,6 @@
 </div>
 
 {{pagination}}
-{{/get}}
-
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
