@@ -768,6 +768,7 @@ body {
     margin-right: calc(50% - 50vw);
     transform: translateX(calc(50vw - 50%));
     max-width: 100%;
+    min-width: 95vw;
 }
 
 .post-content-figcaption {
