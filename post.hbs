@@ -15,6 +15,16 @@
     {{#if feature_image}}
     <figure class="post-content-image">
         <img class="kg-image" src="{{feature_image}}" alt="{{title}}" />
+	<div class="post-content-copyright">
+	    <span class="post-content-copyright-inner">
+	{{#foreach authors}}
+	    {{#if @first}}
+	&copy; <time datetime="{{date format="YYYY"}}">{{date format="YYYY"}}
+	    </time> {{name}}
+	    {{/if}}
+	{{/foreach}}
+	    </span>
+	</div>
 	<div class="post-content-meta">
 	<figcaption class="post-content-figcaption">
 	{{title}}
@@ -24,7 +34,6 @@
 	    </time>
 	--}}
         </figcaption>
-
         <div class="post-content-nav-rigth">
 	{{#next_post}}
         <a class="post-content-nav-arrow" href="{{url}}">&lt;</a>
