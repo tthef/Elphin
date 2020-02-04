@@ -831,7 +831,7 @@ body {
     display: inline;
     color: color(var(--color-base) l(-10%));
     /*background-color: color(var(--color-bg));*/
-    opacity: 0.6;    
+    opacity: 0.6;
     text-align: left;
     padding: 0.5em;
 }
@@ -882,12 +882,19 @@ body {
     font-weight: 200;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     .post-content-body {
 	font-size: 1.2rem;
 	line-height: 1.1em;
     }
 }
+
+@media (max-width: 500px) {
+    .post-content-body {
+        font-size: 1rem;
+    }
+}
+
 
 .page-load-status .hidden {
     display: none;
@@ -937,12 +944,6 @@ body {
 
 .page-gallery-menu span {
     opacity: 0.4;
-}
-
-@media (max-width: 500px) {
-    .post-content-body {
-        font-size: 1.7rem;
-    }
 }
 
 .post-content-body h1,
