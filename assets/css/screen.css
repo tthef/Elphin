@@ -767,6 +767,12 @@ body {
     }
 }
 
+@media (max-width: 650px) {
+    .post-content {
+	max-width: 90vw;
+    }
+}
+
 .post-content-nav-right {
     flex: 1 1 auto;
     display: flex;
@@ -889,7 +895,7 @@ body {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
     .post-content-body {
         font-size: 1rem;
     }
@@ -900,12 +906,20 @@ body {
     display: none;
 }
 
-.page-about .post-content-body {
-    padding-top: 5vw;
+@media (max-width: 500px) {
+    .page-about .post-content-body {
+	padding-top: 2vw;
+    }
 }
 
 .page-about .post-content-body p {
     text-align: justify;
+}
+
+@media (max-width: 500px) {
+    .page-about .post-content-body p {
+	text-align: left;
+    }
 }
 
 .page-gallery-menu {
