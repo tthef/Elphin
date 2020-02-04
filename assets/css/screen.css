@@ -897,13 +897,17 @@ body {
 
 @media (max-width: 650px) {
     .post-content-body {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 }
 
 
 .page-load-status .hidden {
     display: none;
+}
+
+.page-about .post-content-body {
+    padding-top: 5vw;
 }
 
 @media (max-width: 500px) {
