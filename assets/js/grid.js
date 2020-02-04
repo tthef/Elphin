@@ -7,16 +7,18 @@ jQuery(document).ready(function($){
         horizontalOrder: true
 	});
 
+	$grid.addClass('are-images-unloaded');
+
 	var msnry = $grid.data('masonry');
         $grid.imagesLoaded($grid, function( instance ) {
 	        $grid.masonry( 'option', { itemSelector: '.grid-item' });
 
 	        var $items = $grid.find('.grid-item');
+	        $grid.removeClass('are-images-unloaded');
 	        $grid.masonry('appended', $items);
 		// This should not be necessary, but on document reload
 		// the append call doesn't trigger layout
 	        $grid.masonry('layout');
-	        $grid.removeClass('are-images-unloaded');
 
                 $(window).resize(function () {
                     msnry.layout();
@@ -35,5 +37,4 @@ jQuery(document).ready(function($){
 	    // This should not be necessary, but is, no idea why
 	    msnry.layout();
 	});
-
 });
