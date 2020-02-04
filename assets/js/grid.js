@@ -25,8 +25,27 @@ jQuery(document).ready(function($){
                 });
             });
 
+        /* due to a bug in infinite scroll, if the page doesn't have the
+	   path selector, i.e., there is only enough content for one page,
+	   IS errors, and we end up with the status animation going at the
+	   bottom of the page. So, we check ourselves, and if there is only
+	   one page, give it a function that returns non-existent url (the
+	   function must return something that doesn't evaluate to false,
+	   otherwise same thing happens.
+
+           It would make sense not to init IS in this case, but that breaks
+	   the grid.
+	 */
+        var path;	
+        var $older = $('.pagination').find('.older-posts');
+	if ($older[0]) {
+	    path = '.older-posts';
+	} else {
+	    path = function () { return 'no-more-pages'; };
+	}
+	
         $grid.infiniteScroll({
-            path: '.older-posts',
+            path: path,
             append: '.grid-item',
             outlayer: msnry,
             status: '.page-load-status',
