@@ -816,8 +816,7 @@ body {
     display: flex;
     justify-contents: left;
     position: relative;
-    left: 0.4em;
-    bottom: 2em;
+    bottom: 0;
     font-weight: 300;
     font-size: 0.7em;
     line-height: 1.1em;
@@ -828,10 +827,10 @@ body {
     margin: 0;
     display: inline;
     color: color(var(--color-base) l(-10%));
-    background-color: color(var(--color-bg));
+    /*background-color: color(var(--color-bg));*/
     opacity: 0.6;    
     text-align: left;
-    padding: 0.2em;
+    padding: 0.5em;
 }
 
 .post-content-figcaption {
@@ -845,7 +844,7 @@ body {
 .post-content-meta {
     flex: 1 1 auto;
     display: flex;
-    margin-top: -1.5em;
+    margin-top: -1em;
 }
 
 .post-content-header {
