@@ -912,22 +912,22 @@ body {
     display: none;
 }
 
-.page-about .post-content-body {
+.page-about .post-content-body, .page-prints .post-content-body {
     padding-top: 5vw;
 }
 
 @media (max-width: 500px) {
-    .page-about .post-content-body {
+    .page-about .post-content-body, .page-about .post-content-body {
 	padding-top: 2vw;
     }
 }
 
-.page-about .post-content-body p {
+.page-about .post-content-body p, .page-about .post-content-body p {
     text-align: justify;
 }
 
 @media (max-width: 500px) {
-    .page-about .post-content-body p {
+    .page-about .post-content-body p, .page-about .post-content-body p {
 	text-align: left;
     }
 }
