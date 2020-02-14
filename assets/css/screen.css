@@ -175,15 +175,18 @@ body {
     align-items: center;
 }
 
+.home-template .home-main {
+    min-height: 90vh;
+}
+
 .home-content {
-    padding-top: 20vh;
+    padding-top: 0vh;
     diplay: flex;
     justify-content: center;
 }
 
 @media (max-width: 500px) {
     .home-content {
-	padding-top: 10vh;
 	diplay: flex;
 	justify-content: center;
     }
@@ -921,8 +924,12 @@ body {
 }
 
 .page-about .post-content-body {
-    padding-top: 5vw;
+    display: flex;
+    min-height: 90vh;
+    flex-direction: column;
+    justify-content: center;
 }
+
 
 .page-prints .post-content-body {
     padding-top: 2vw;
