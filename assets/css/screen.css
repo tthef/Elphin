@@ -928,10 +928,13 @@ body {
 }
 
 .page-about .post-content-body {
+    padding-top: 10vh;
+/*
     display: flex;
     min-height: 90vh;
     flex-direction: column;
     justify-content: center;
+*/
 }
 
 
