@@ -155,7 +155,7 @@ body {
     display: block;
 }
 
-.home-template .site-foot, .page-about .site-foot {
+.home-template .site-foot, .page-about .site-foot, .page-contact .site-foot {
     position: fixed;
     bottom: 1vh;
 }
