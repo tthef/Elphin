@@ -1066,6 +1066,7 @@ body {
     margin: 4vw 0;
 }
 
+/*
 .post-content-body hr:after {
     content: "";
     position: absolute;
@@ -1079,6 +1080,7 @@ body {
     box-shadow: #fff 0 0 0 5px;
     transform: rotate(45deg);
 }
+*/
 
 .footnotes-sep {
     margin-bottom: 30px;
